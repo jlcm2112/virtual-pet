@@ -6,74 +6,67 @@ public class VirtualPet {
 	private Random generator = new Random();
 	Scanner scanner = new Scanner(System.in);
 
-	private String name;
+	private String name = "Stacy"; //instance variables
 	private int hunger;
 	private int thirst;
-	private int cold;
+	private int cold = 72;
 
-	public VirtualPet() {
-		name = "Stacy";
-	}
-
+	//increments variables semi-randomly to simulate passage of time 
 	public void tick() {
-		hunger += (5 + generateRandom());
-		thirst += (5 + generateRandom());
-		cold += (5 + generateRandom());
-
+		hunger += (15 + generateRandom());
+		thirst += (15 + generateRandom());
+		cold -= (1 + generateRandom());
 	}
+	
 
 	public void reset() {
 		hunger = 0;
 		thirst = 0;
-		cold = 0;
-
+		cold = 72;
 	}
 
 	public int generateRandom() {
 		return generator.nextInt(6); // random int 0-5
 	}
-
-
-	// hunger
-	public boolean isHungry() {
-		boolean hungry = (hunger >= 50);
-		return hungry;
+	
+	//name
+	public String getName() {
+		return name;
+	}
+	public void rename(String newName) {
+		name = newName;
 	}
 
+	//hunger
 	public int getHunger() {
 		return hunger;
 	}
+	
+	public boolean isHungry() {
+		return hunger >= 40;
+	}
+	
+	public boolean isVeryHungry() {
+		return hunger >= 80;
+	}
 
 	public void giveAMouse() {
-		if (hunger <= -40) {
-			System.out.println("Stacy is full and refuses the mouse.");
-		} else {
-			hunger -= 40;
-			System.out.println("You give stacy a delicious mouse!");
-
-		}
+		hunger -= 60;
+		thirst -= 20;
 	}
+	
 	public void giveARabbit() {
-		if (hunger <= -60) {
-			System.out.println("Stacy is full and refuses the rabbit.");
-		} else {
-			hunger -= 60;
-			System.out.println("You give stacy a delicious rabbit! Stacy dances in excitement because this is her favorite food!");
-
-		}
+		hunger -= 100;
+		thirst -= 30;
 	}
+	
 	public void giveACricket() {
-		if (hunger <= -20) {
-			System.out.println("Stacy is full and refuses the cricket.");
-		} else {
-			System.out.println("You try to give stacy a delicious cricket! Stacy doesn't want it because she hates crickets.");
-
-		}
+		hunger -= 40;
+		thirst -= 10;
 	}
 
 	public boolean hasStarved() {
-		boolean starved = (hunger >= 100);
-		return starved;
+		return hunger >=140;
 	}
 
 	// thirst
@@ -82,24 +75,20 @@ public class VirtualPet {
 	}
 
 	public boolean isThirsty() {
-		boolean thirsty = (thirst >= 50);
-		return thirsty;
+		return thirst>=50;
+	}
+	
+	public boolean isVeryThirsty() {
+		return thirst>=100;
 	}
 
 	public void giveSomeWater() {
-		if (thirst <= -50) {
-			System.out.println("Stacy isn't thirsty and refuses the water.");
-		} else {
-			thirst -= 40;
-			System.out.println("You give stacy a some water!");
-
-		}
-
+		thirst = 0;
+		cold -= 10;
 	}
 
 	public boolean hasDehydrated() {
-		boolean dehydrated = (thirst >= 100);
-		return dehydrated;
+		return thirst>=180;
 	}
 
 	// cold
@@ -108,29 +97,22 @@ public class VirtualPet {
 	}
 
 	public boolean isCold() {
-		boolean coldSnake = (cold >= 50);
-		return coldSnake;
+		return cold<=68;
 	}
 
 	public boolean isVeryCold() {
-		boolean coldSnake = (cold >= 90);
-		return coldSnake;
+		return cold<=60;
 	}
-
-	public void sunBathe() {
-		if (cold <= -10) {
-			System.out.println("Stacy isn't cold and slithers away.");
-		} else {
-			cold -= 50;
-			System.out.println("You give stacy a sunbath with the heat lamp!");
-		}
-
+	
+	public boolean isHot() {
+		return cold>=95;
 	}
-
-	public void heatedRock() {
-		cold -= 50;
-		System.out.println("Stacy warmed herself up on her heated rock \n");
-
+	
+	public void giveHeatLamp() {
+		cold += 20;
+	}
+	public void slithersIntoWater() {
+		cold -= 20;
 	}
 
 }
