@@ -52,31 +52,41 @@ public class VirtualPetApp {
 
 			System.out.println("\nWhat would you like to do?");
 			System.out.println("1. Feed Stacy a mouse");
-			System.out.println("2. Give Stacy some water");
-			System.out.println("3. Give Stacy her heated lamp");
-			System.out.println("4. Do Nothing");
+			System.out.println("2. Feed Stacy a rabbit");
+			System.out.println("3. Feed Stacy a cricket");
+			System.out.println("4. Give Stacy some water");
+			System.out.println("5. Give Stacy her heated lamp");
+			System.out.println("6. Do Nothing");
 
 			int intResponse = input.nextInt();
 			String stringResponse;
 			stacy.tick();
 
 			switch (intResponse) {
-			case 1: {
+			case 1: 
 				stacy.giveAMouse();
 				stacy.tick();
 				break;
-			}
-			case 2: {
+			case 2: 
+				stacy.giveARabbit();
+				stacy.tick();
+				break;
+			case 3: 
+				stacy.giveACricket();
+				stacy.tick();
+				break;
+			
+			case 4: 
 				stacy.giveSomeWater();
 				stacy.tick();
 				break;
-			}
-			case 3: {
+			 
+			case 5: 
 				stacy.sunBathe();
 				stacy.tick();
 				break;
-			}
-			case 4:
+			 
+			case 6:
 				stacy.tick();
 				break;
 			}

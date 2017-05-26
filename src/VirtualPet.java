@@ -53,6 +53,23 @@ public class VirtualPet {
 
 		}
 	}
+	public void giveARabbit() {
+		if (hunger <= -60) {
+			System.out.println("Stacy is full and refuses the rabbit.");
+		} else {
+			hunger -= 60;
+			System.out.println("You give stacy a delicious rabbit! Stacy dances in excitement because this is her favorite food!");
+
+		}
+	}
+	public void giveACricket() {
+		if (hunger <= -20) {
+			System.out.println("Stacy is full and refuses the cricket.");
+		} else {
+			System.out.println("You try to give stacy a delicious cricket! Stacy doesn't want it because she hates crickets.");
+
+		}
+	}
 
 	public boolean hasStarved() {
 		boolean starved = (hunger >= 100);
