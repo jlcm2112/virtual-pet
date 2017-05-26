@@ -1,10 +1,8 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class VirtualPet {
 
 	private Random generator = new Random();
-	Scanner scanner = new Scanner(System.in);
 
 	private String name = "Stacy"; //instance variables
 	private int hunger;
@@ -13,8 +11,8 @@ public class VirtualPet {
 
 	//increments variables semi-randomly to simulate passage of time 
 	public void tick() {
-		hunger += (15 + generateRandom());
-		thirst += (15 + generateRandom());
+		hunger += (10 + generateRandom());
+		thirst += (10 + generateRandom());
 		cold -= (1 + generateRandom());
 	}
 	
@@ -26,7 +24,7 @@ public class VirtualPet {
 	}
 
 	public int generateRandom() {
-		return generator.nextInt(6); // random int 0-5
+		return generator.nextInt(10); // random int 0-5
 	}
 	
 	//name

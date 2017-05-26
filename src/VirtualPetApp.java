@@ -30,12 +30,13 @@ public class VirtualPetApp {
 
 		do {
 			System.out
-					.println(snake.getName() + "'s level of hunger is: " + snake.getHunger() + " | level of thirst is: "
+					.println(snake.getName() + "'s level of hunger is: " + snake.hunger() + " | level of thirst is: "
 							+ snake.getThirst() + " | temperature is: " + snake.getTemp() + " degrees F.\n");
 
 			// Stacy will ask for help when she needs it
 			if (snake.isVeryHungry()) {
-				System.out.println(snake.getName() + " says: \"Got any deliciousss rabbits?\"\n");
+				System.out.println(snake.getName() + " says: \"Got any deliciousss rabbits?\"\n"
+						+ "");
 			} else if (snake.isHungry()) {
 				System.out.println(snake.getName() + " says: \"Got any deliciousss mice?\"\n");
 			}
@@ -57,9 +58,8 @@ public class VirtualPetApp {
 			System.out.println("6. Display your snake");
 			System.out.println("7. Do Nothing");
 
-			String response = input.next();
-			response.toLowerCase();
-
+			String response = input.next().toLowerCase();
+=
 			switch (response) {
 			case "1":
 				if (snake.isHungry()) {
