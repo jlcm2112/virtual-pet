@@ -52,8 +52,9 @@ public class VirtualPetApp {
 			System.out.println("3. Feed " + snake.getName() + " a cricket");
 			System.out.println("4. Give " + snake.getName() + " some water");
 			System.out.println("5. Give " + snake.getName() + " her heated lamp");
-			System.out.println("6. Display your snake");
-			System.out.println("7. Do Nothing");
+			System.out.println("6. Play with " + snake.getName());
+			System.out.println("7. Display your snake");
+			System.out.println("8. Do Nothing");
 
 			String response = input.next().toLowerCase();
 
@@ -105,8 +106,12 @@ public class VirtualPetApp {
 					System.out.println(snake.getName() + " isn't cold and slithers away.\n");
 				}
 				break;
-
 			case "6":
+				snake.play();
+				System.out.println("You play with " + snake.getName() + ". \n");
+				break;
+
+			case "7":
 				System.out.println("This is " + snake.getName() + "; isn't she pretty?");
 				System.out.println("         ,,'6''-,.");
 				System.out.println("        <====,.;;--.");
@@ -126,7 +131,7 @@ public class VirtualPetApp {
 				System.out.println("                \"\"\"\"		\n");
 				break;
 
-			case "7":
+			case "8":
 				break;
 
 			case "quit":

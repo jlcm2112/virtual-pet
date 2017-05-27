@@ -16,6 +16,11 @@ public class VirtualPet {
 		temp -= (1 + generateRandom());
 	}
 	
+	public void play() {
+		hunger += 5;
+		thirst += 5;
+		temp += 4;			
+	}
 
 	public void reset() {
 		hunger = 0;
@@ -42,7 +47,7 @@ public class VirtualPet {
 	}
 	
 	public boolean isHungry() {
-		return hunger >= 40;
+		return hunger >= 20;
 	}
 	
 	public boolean isVeryHungry() {
