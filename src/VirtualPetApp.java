@@ -9,8 +9,7 @@ public class VirtualPetApp {
 
 		boolean wantsToQuit = false;
 
-		System.out.println(
-				"This is " + snake.getName() + " the snake (You can type \"rename\" or \"quit\" at any time).");
+		System.out.println("This is " + snake.getName() + " the snake (You can type \"rename\" or \"quit\" at any time).");
 		System.out.println("         ,,'6''-,.");
 		System.out.println("        <====,.;;--.");
 		System.out.println("        _`---===. \"\"\"==__");
@@ -29,8 +28,7 @@ public class VirtualPetApp {
 		System.out.println("                \"\"\"\"		");
 
 		do {
-			System.out
-					.println(snake.getName() + "'s level of hunger is: " + snake.getHunger() + " | level of thirst is: "
+			System.out.println(snake.getName() + "'s level of hunger is: " + snake.getHunger() + " | level of thirst is: "
 							+ snake.getThirst() + " | temperature is: " + snake.getTemp() + " degrees F.\n");
 
 			// Stacy will ask for help when she needs it
@@ -160,9 +158,7 @@ public class VirtualPetApp {
 				}
 				snake.reset();
 				response = input.next().toLowerCase();
-				wantsToQuit = !response.equals("yes"); // if they type yes,
-														// wantsToQuit becomes
-														// true
+				wantsToQuit = !response.equals("yes"); // if they type yes, wantsToQuit becomes true.
 			}
 
 			// Stacy will do these on her own if you ignore her needs
