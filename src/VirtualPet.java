@@ -7,30 +7,31 @@ public class VirtualPet {
 	private String name = "Stacy"; //instance variables
 	private int hunger;
 	private int thirst;
-	private int cold = 72;
+	private int temp = 72;
 
 	//increments variables semi-randomly to simulate passage of time 
 	public void tick() {
 		hunger += (10 + generateRandom());
 		thirst += (10 + generateRandom());
-		cold -= (1 + generateRandom());
+		temp -= (1 + generateRandom());
 	}
 	
 
 	public void reset() {
 		hunger = 0;
 		thirst = 0;
-		cold = 72;
+		temp = 72;
 	}
 
 	public int generateRandom() {
-		return generator.nextInt(10); // random int 0-5
+		return generator.nextInt(10); // random int 0-9
 	}
 	
 	//name
 	public String getName() {
 		return name;
 	}
+	
 	public void rename(String newName) {
 		name = newName;
 	}
@@ -82,7 +83,7 @@ public class VirtualPet {
 
 	public void giveSomeWater() {
 		thirst = 0;
-		cold -= 10;
+		temp -= 10;
 	}
 
 	public boolean hasDehydrated() {
@@ -91,26 +92,26 @@ public class VirtualPet {
 
 	// cold
 	public int getTemp() {
-		return cold;
+		return temp;
 	}
 
 	public boolean isCold() {
-		return cold<=68;
+		return temp<=68;
 	}
 
 	public boolean isVeryCold() {
-		return cold<=60;
+		return temp<=60;
 	}
 	
 	public boolean isHot() {
-		return cold>=95;
+		return temp>=95;
 	}
 	
 	public void giveHeatLamp() {
-		cold += 20;
+		temp += 20;
 	}
 	public void slithersIntoWater() {
-		cold -= 20;
+		temp -= 20;
 	}
 
 }

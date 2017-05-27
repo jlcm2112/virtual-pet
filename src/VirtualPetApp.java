@@ -35,8 +35,7 @@ public class VirtualPetApp {
 
 			// Stacy will ask for help when she needs it
 			if (snake.isVeryHungry()) {
-				System.out.println(snake.getName() + " says: \"Got any deliciousss rabbits?\"\n"
-						+ "");
+				System.out.println(snake.getName() + " says: \"Got any deliciousss rabbits?\"\n" + "");
 			} else if (snake.isHungry()) {
 				System.out.println(snake.getName() + " says: \"Got any deliciousss mice?\"\n");
 			}
@@ -59,7 +58,7 @@ public class VirtualPetApp {
 			System.out.println("7. Do Nothing");
 
 			String response = input.next().toLowerCase();
- 
+
 			switch (response) {
 			case "1":
 				if (snake.isHungry()) {
@@ -81,11 +80,11 @@ public class VirtualPetApp {
 			case "3":
 				if (snake.isVeryHungry()) {
 					System.out.println("You give " + snake.getName()
-					+ " a delicious cricket! Stacy reluctantly accepts it because she's very hungry.\n");
-			    snake.giveACricket();
+							+ " a cricket! Stacy reluctantly accepts it because she's very hungry.\n");
+					snake.giveACricket();
 				} else if (snake.isHungry()) {
 					System.out.println("You try to give " + snake.getName()
-					+ " a delicious cricket! Stacy doesn't want it because she hates crickets.\n");
+							+ " a cricket! Stacy doesn't want it because she HATES crickets.\n");
 				} else {
 					System.out.println(snake.getName() + " is full and hates crickets.\n");
 				}
@@ -157,20 +156,20 @@ public class VirtualPetApp {
 					System.out.println(snake.getName() + " has starved. Do you want to try again (yes/no)?");
 				}
 				if (snake.hasDehydrated()) {
-					System.out.println(snake.getName() + " has starved. Do you want to try again (yes/no)?");
+					System.out.println(snake.getName() + " has dehydrated. Do you want to try again (yes/no)?");
 				}
 				snake.reset();
-				response = input.next();
-				response = response.toLowerCase();
+				response = input.next().toLowerCase();
 				wantsToQuit = !response.equals("yes"); // if they type yes,
 														// wantsToQuit becomes
 														// true
 			}
-			
+
 			// Stacy will do these on her own if you ignore her needs
 			if (snake.isVeryCold()) {
 				snake.giveHeatLamp();
-				System.out.println("\n" +snake.getName() + " is very cold, so she warms herself up on her heated rock.\n");
+				System.out.println(
+						"\n" + snake.getName() + " is very cold, so she warms herself up on her heated rock.\n");
 				continue;
 			}
 			if (snake.isHot()) {
