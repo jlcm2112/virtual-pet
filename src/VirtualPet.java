@@ -8,24 +8,21 @@ public class VirtualPet {
 	private int hunger;
 	private int thirst;
 	private int temp = 72;
+	private int boredom;
 
 	//increments variables semi-randomly to simulate passage of time 
 	public void tick() {
 		hunger += (10 + generateRandom());
 		thirst += (10 + generateRandom());
 		temp -= (1 + generateRandom());
+		boredom += (1 + generateRandom());
 	}
 	
-	public void play() {
-		hunger += 5;
-		thirst += 5;
-		temp += 4;			
-	}
-
 	public void reset() {
 		hunger = 0;
 		thirst = 0;
 		temp = 72;
+		boredom = 0;
 	}
 
 	public int generateRandom() {
@@ -117,6 +114,19 @@ public class VirtualPet {
 	}
 	public void slithersIntoWater() {
 		temp -= 20;
+	}
+	// boredom
+	public int getBoredom() {
+		return boredom;
+	}
+	public void play() {
+		hunger += 5;
+		thirst += 5;
+		temp += 4;
+		boredom -= 50;
+	}
+	public boolean isBored() {
+		return boredom>=50;
 	}
 
 }
