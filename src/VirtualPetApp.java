@@ -11,25 +11,26 @@ public class VirtualPetApp {
 
 		writeLine("What would you name your (female) snake?");
 		snake.rename(input.next());
-		do {
-			writeLine("This is " + snake.getName() + " the snake (You can type \"rename\" or \"quit\" at any time).");
-			writeLine("         ,,'6''-,.");
-			writeLine("        <====,.;;--.");
-			writeLine("        _`---===. \"\"\"==__");
-			writeLine("      //\"\"@@-\\===\\@@@@ \"\"\\\\");
-			writeLine("     |( @@@  |===|  @@@  ||");
-			writeLine("      \\\\ @@   |===|  @@  //");
-			writeLine("        \\\\ @@ |===|@@@ //");
-			writeLine("         \\\\  |===|  //");
-			writeLine("___________\\\\|===| //_____,----\"\"\"\"\"\"\"\"\"\"-----,_");
-			writeLine("  \"\"\"\"---,__`\\===`/ _________,---------,____    `,");
-			writeLine("             |==||                           `\\   \\");
-			writeLine("            |==| |                             )   |");
-			writeLine("           |==| |       _____         ______,--'   '");
-			writeLine("           |=|  `----\"\"\"     `\"\"\"\"\"\"\"\"         _,-'");
-			writeLine("            `=\\     __,---\"\"\"-------------\"\"\"''");
-			writeLine("                \"\"\"\"		");
 
+		writeLine("This is " + snake.getName() + " the snake (You can type \"rename\" or \"quit\" at any time).");
+		writeLine("         ,,'6''-,.");
+		writeLine("        <====,.;;--.");
+		writeLine("        _`---===. \"\"\"==__");
+		writeLine("      //\"\"@@-\\===\\@@@@ \"\"\\\\");
+		writeLine("     |( @@@  |===|  @@@  ||");
+		writeLine("      \\\\ @@   |===|  @@  //");
+		writeLine("        \\\\ @@ |===|@@@ //");
+		writeLine("         \\\\  |===|  //");
+		writeLine("___________\\\\|===| //_____,----\"\"\"\"\"\"\"\"\"\"-----,_");
+		writeLine("  \"\"\"\"---,__`\\===`/ _________,---------,____    `,");
+		writeLine("             |==||                           `\\   \\");
+		writeLine("            |==| |                             )   |");
+		writeLine("           |==| |       _____         ______,--'   '");
+		writeLine("           |=|  `----\"\"\"     `\"\"\"\"\"\"\"\"         _,-'");
+		writeLine("            `=\\     __,---\"\"\"-------------\"\"\"''");
+		writeLine("                \"\"\"\"		");
+
+		do {
 			System.out.println(snake.getName() + "'s level of hunger is: " + snake.getHunger()
 					+ " | level of thirst is: " + snake.getThirst() + " | temperature is: " + snake.getTemp()
 					+ " degrees F | boredom is: " + snake.getBoredom() + "\n");
@@ -88,7 +89,7 @@ public class VirtualPetApp {
 					writeLine("You try to give " + snake.getName() + " a cricket! " + snake.getName()
 							+ " doesn't want it because she HATES crickets.\n");
 				} else {
-					writeLine(snake.getName() + " is full and hates crickets.\n");
+					writeLine(snake.getName() + " is full and she HATES crickets.\n");
 				}
 				break;
 
