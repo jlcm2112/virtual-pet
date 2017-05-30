@@ -7,8 +7,6 @@ public class VirtualPetApp {
 		VirtualPet snake = new VirtualPet();
 		Scanner input = new Scanner(System.in);
 
-		boolean wantsToQuit = false;
-
 		writeLine("What would you name your (female) snake?");
 		snake.rename(input.next());
 
@@ -30,6 +28,7 @@ public class VirtualPetApp {
 		writeLine("            `=\\     __,---\"\"\"-------------\"\"\"''");
 		writeLine("                \"\"\"\"		");
 
+		boolean wantsToQuit = false;
 		do {
 			System.out.println(snake.getName() + "'s level of hunger is: " + snake.getHunger()
 					+ " | level of thirst is: " + snake.getThirst() + " | temperature is: " + snake.getTemp()
@@ -185,12 +184,12 @@ public class VirtualPetApp {
 			}
 			if (snake.isBored()) {
 				snake.play();
-				writeLine("\n" + snake.getName() + " , bored, climbs around the terrarium.\n");
+				writeLine("\n" + snake.getName() + ", bored, climbs around the terrarium.\n");
 				continue;
 			}
 		} while (!wantsToQuit);
 
-		writeLine("Goodbye.");
+		writeLine("Goodbye."); 
 		input.close();
 	}
 
