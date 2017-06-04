@@ -1,9 +1,10 @@
-# Week 2 exercise
+# Week 3 exercise
 
--The virtual pet Stacy the snake has 3 attributes: hunger, thirst, and temperature. They increment or decrement at a semi-random rate, and she will tell you when she needs things. 
--Stacy can't feed or water herself, but has the ability to heat herself up on her warm rock when very cold. 
--Stacy likes some food more than others.
--Careful: If Stacy's thirst or hunger get too high, she will die. 
--But if she dies, you can always try again (she's virtual after all, so no big deal).
--You can rename Stacy at any time by tpying "rename".
--You can quit at any time by typing "quit".
+-Welcome to the virtual pet shelter (a no-kill shelter). 
+-you can admit a pet by giving us their name and description
+-you'll find some pets already in the shelter. Some are more hungry or messy than others
+-you'll need to periodically feed, water, and clean individual cages to keep the pets happy
+-you can adopt a pet at any time (but make sure it's going to a good home!)
+-don't forget to play with the pets to keep them from being too bored
+-watch out for Old Gregg. He drinks Bailey's from a shoe.
+-have fun!
