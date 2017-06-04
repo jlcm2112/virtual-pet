@@ -4,38 +4,18 @@ public class VirtualPet {
 
 	private Random generator = new Random();
 
-	  String description;  //instance variables
-	  String name;
-	  int cageMessiness;
-	  int hunger;
-	  int thirst;
-	  int temp;
-	  int boredom;
-	
-	public VirtualPet(String nameParam, String descriptionParam) {
-		name = nameParam;
-		description = descriptionParam;
-		temp = 72;
-		cageMessiness = 0;
-	}
-	
-	public VirtualPet(String nameParam, String descriptionParam, int hungerParam, int thirstParam, int tempParam, int boredomParam, int cageMessinessParam) {
-		name = nameParam;
-		description = descriptionParam;
-		hunger = hungerParam;
-		thirst = thirstParam;
-		temp = tempParam;
-		boredom = boredomParam;
-		cageMessiness = cageMessinessParam;
-	}
-	
+	private String name = "Stacy"; //instance variables
+	private int hunger;
+	private int thirst;
+	private int temp = 72;
+	private int boredom;
+
 	//increments variables semi-randomly to simulate passage of time 
 	public void tick() {
 		hunger += (10 + generateRandom());
 		thirst += (10 + generateRandom());
 		temp -= (1 + generateRandom());
 		boredom += (1 + generateRandom());
-		cageMessiness += (1 + generateRandom());
 	}
 	
 	public void reset() {
@@ -43,7 +23,6 @@ public class VirtualPet {
 		thirst = 0;
 		temp = 72;
 		boredom = 0;
-		cageMessiness = 0;
 	}
 
 	public int generateRandom() {
@@ -72,10 +51,9 @@ public class VirtualPet {
 		return hunger >= 80;
 	}
 
-	public void feed() {
-		hunger = 0;
-		thirst += 10;
-		cageMessiness += 20;
+	public void giveAMouse() {
+		hunger -= 60;
+		thirst -= 20;
 	}
 	
 	public void giveARabbit() {
@@ -105,10 +83,9 @@ public class VirtualPet {
 		return thirst>=100;
 	}
 
-	public void water() {
+	public void giveSomeWater() {
 		thirst = 0;
-		cageMessiness += 10;
-	
+		temp -= 10;
 	}
 
 	public boolean hasDehydrated() {
@@ -146,20 +123,10 @@ public class VirtualPet {
 		hunger += 5;
 		thirst += 5;
 		temp += 4;
-		boredom =0;
+		boredom -= 50;
 	}
 	public boolean isBored() {
 		return boredom>=50;
 	}
-	//cage
-	public void cleanCage() {
-		cageMessiness = 0;
-	}
-	
-	@Override
-	public String toString() {
-		return ("[" + name + "] " + description); 
-	}
-	
 
 }
